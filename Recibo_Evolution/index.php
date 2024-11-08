@@ -152,7 +152,7 @@ $cronFilePath = '/tmp/cron_recibo_whatsapp';
 // Função para atualizar o cron com o intervalo especificado
 function atualizarCron($intervaloMinutos) {
     global $cronFilePath;
-    $comando = "/usr/bin/php -q /opt/mk-auth/admin/addons/Recibo_Whatsapp/enviozap.php >/dev/null 2>&1";
+    $comando = "/usr/bin/php -q /opt/mk-auth/admin/addons/Recibo_Evolution/enviozap.php >/dev/null 2>&1";
     $cronLinha = "*/$intervaloMinutos * * * * $comando" . PHP_EOL;
     file_put_contents($cronFilePath, $cronLinha);
     exec("crontab $cronFilePath");
@@ -187,7 +187,7 @@ if (isset($_POST['delete_schedule'])) {
 }
 
 // Caminho e permissões para o diretório de configurações
-$dir_path = '/opt/mk-auth/dados/Recibo_Whatsapp';
+$dir_path = '/opt/mk-auth/dados/Recibo_Evolution';
 $file_path = $dir_path . '/config.php';
 if (!is_dir($dir_path)) mkdir($dir_path, 0755, true);
 
