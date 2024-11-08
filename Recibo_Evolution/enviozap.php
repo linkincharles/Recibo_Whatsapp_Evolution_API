@@ -16,7 +16,7 @@ if (file_exists($configFile)) {
     $token = desencriptar($config['token'], $chave_criptografia);
 
     if ($token && $ip) {
-        $apiBaseURL = "http://$ip/message/sendText/$user"; // URL da Evolution API
+        $apiBaseURL = "https://$ip/message/sendText/$user"; // URL da Evolution API
     } else {
         die("Erro: Falha ao desencriptar o token ou IP.");
     }
