@@ -24,7 +24,7 @@ if (file_exists($configFile)) {
     if ($token && $ip) {
         // Define o protocolo com base no tipo de IP
         $protocol = isPrivateIP($ip) ? 'http' : 'https';
-        $apiBaseURL = "$protocol://$ip/message/sendText/$user"; // URL da Evolution API
+        $apiBaseURL = "https://$ip/message/sendText/$user"; // URL da Evolution API
     } else {
         die("Erro: Falha ao desencriptar o token ou IP.");
     }
